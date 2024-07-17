@@ -11,7 +11,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f9f9f9; /* Light background */
+            background-color: #ffffff; /* White background */
         }
         .sticky-note {
             width: 300px;
@@ -20,9 +20,7 @@
             border-radius: 15px; /* Rounded corners */
             box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s;
-        }
-        .sticky-note:hover {
-            background-color: #ffcccc; /* Slightly darker on hover */
+            margin-top: 10px; /* New margin for spacing */
         }
         textarea {
             width: 100%;
@@ -35,10 +33,14 @@
             outline: none;
             background-color: transparent;
         }
+        .controls {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; /* New margin for spacing */
+        }
         .color-buttons {
             display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
+            margin-right: 20px; /* Space between color buttons and text size */
         }
         .color-button {
             width: 20px;
@@ -47,14 +49,10 @@
             cursor: pointer;
             border: none;
             transition: transform 0.2s;
+            margin-right: 5px; /* Space between color buttons */
         }
         .color-button:hover {
             transform: scale(1.1);
-        }
-        .text-size {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
         }
         .text-size-button {
             background: none;
@@ -70,17 +68,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="sticky-note" id="stickyNote">
-        <textarea id="noteText" placeholder="Write your notes here..."></textarea>
-        <div class="color-buttons">
-            <button class="color-button" style="background-color: #ffe6e6;" onclick="changeColor('#ffe6e6')"></button>
-            <button class="color-button" style="background-color: #e6f7ff;" onclick="changeColor('#e6f7ff')"></button>
-            <button class="color-button" style="background-color: #e6ffe6;" onclick="changeColor('#e6ffe6')"></button>
-            <button class="color-button" style="background-color: #fff0e6;" onclick="changeColor('#fff0e6')"></button>
-        </div>
-        <div class="text-size">
+    <div>
+        <div class="controls">
+            <div class="color-buttons">
+                <!-- Added two new color buttons -->
+                <button class="color-button" style="background-color: #ffe6e6;" onclick="changeColor('#ffe6e6')"></button>
+                <button class="color-button" style="background-color: #e6f7ff;" onclick="changeColor('#e6f7ff')"></button>
+                <button class="color-button" style="background-color: #e6ffe6;" onclick="changeColor('#e6ffe6')"></button>
+                <button class="color-button" style="background-color: #fff0e6;" onclick="changeColor('#fff0e6')"></button>
+                <button class="color-button" style="background-color: #ffebcc;" onclick="changeColor('#ffebcc')"></button>
+                <button class="color-button" style="background-color: #e6ccff;" onclick="changeColor('#e6ccff')"></button>
+            </div>
             <button class="text-size-button" onclick="changeTextSize('small')">A</button>
             <button class="text-size-button" onclick="changeTextSize('large')">A</button>
+        </div>
+        <div class="sticky-note" id="stickyNote">
+            <textarea id="noteText" placeholder="Write your notes here..."></textarea>
         </div>
     </div>
 
