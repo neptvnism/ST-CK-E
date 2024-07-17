@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Note Widget</title>
+    <style>
+        body {
+            font-family: 'Patrick Hand', cursive; /* Use a handwriting-like font */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9; /* Light background */
+        }
+        .sticky-note {
+            width: 300px;
+            padding: 20px;
+            background-color: #ffe6e6; /* Default pastel color */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+        .sticky-note:hover {
+            background-color: #ffcccc; /* Slightly darker on hover */
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-family: 'Patrick Hand', cursive;
+            resize: none;
+            outline: none;
+            background-color: transparent;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sticky-note">
+        <textarea placeholder="Write your notes here..."></textarea>
+    </div>
+</body>
+</html>
