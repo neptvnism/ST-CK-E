@@ -35,12 +35,68 @@
             outline: none;
             background-color: transparent;
         }
+        .color-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .color-button {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s;
+        }
+        .color-button:hover {
+            transform: scale(1.1);
+        }
+        .text-size {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .text-size-button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .text-size-button:hover {
+            transform: scale(1.1);
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="sticky-note">
-        <textarea placeholder="Write your notes here..."></textarea>
+    <div class="sticky-note" id="stickyNote">
+        <textarea id="noteText" placeholder="Write your notes here..."></textarea>
+        <div class="color-buttons">
+            <button class="color-button" style="background-color: #ffe6e6;" onclick="changeColor('#ffe6e6')"></button>
+            <button class="color-button" style="background-color: #e6f7ff;" onclick="changeColor('#e6f7ff')"></button>
+            <button class="color-button" style="background-color: #e6ffe6;" onclick="changeColor('#e6ffe6')"></button>
+            <button class="color-button" style="background-color: #fff0e6;" onclick="changeColor('#fff0e6')"></button>
+        </div>
+        <div class="text-size">
+            <button class="text-size-button" onclick="changeTextSize('small')">A</button>
+            <button class="text-size-button" onclick="changeTextSize('large')">A</button>
+        </div>
     </div>
+
+    <script>
+        function changeColor(color) {
+            document.getElementById('stickyNote').style.backgroundColor = color;
+        }
+
+        function changeTextSize(size) {
+            const textarea = document.getElementById('noteText');
+            if (size === 'small') {
+                textarea.style.fontSize = '14px'; // Small size
+            } else if (size === 'large') {
+                textarea.style.fontSize = '20px'; // Large size
+            }
+        }
+    </script>
 </body>
 </html>
